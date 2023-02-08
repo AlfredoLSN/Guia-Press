@@ -53,5 +53,26 @@ router.post("/articles/delete",(req,res) => {
 
     }
 })
+router.get("/admin/article/edit/:id", (req,res) => {
+    var id = req.params.id;
+    Article.findOne({
+        where: {
+            id: id
+        },
+        include : [{
+            model: Category
+        }]
+    }).then(article => {
+        if(article != undefined){
+            Category.findAll().then(categories => {
+                res.render("admin/articles/edit", {article: article, categories: categories});
+            })
+        }else{
+            res.redirect("admin/articles");
+        }
+    }).catch(error => {
+        res.redirect("admin/articles");
+    })
+})
 
 module.exports = router;

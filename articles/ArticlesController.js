@@ -55,14 +55,10 @@ router.post("/articles/delete",(req,res) => {
 })
 router.get("/admin/article/edit/:id", (req,res) => {
     var id = req.params.id;
-    Article.findOne({
-        where: {
-            id: id
-        },
-        include : [{
-            model: Category
-        }]
-    }).then(article => {
+    if(isNaN(id)){
+        res.redirect("/admin/articles");
+    }
+    Article.findByPk(id).then(article => {
         if(article != undefined){
             Category.findAll().then(categories => {
                 res.render("admin/articles/edit", {article: article, categories: categories});
@@ -78,14 +74,16 @@ router.post("/articles/update", (req,res) => {
     var id = req.body.id;
     var title = req.body.title;
     var body = req.body.body;
-    var categoryId = req.body.category;
+    var category = req.body.category;
 
-    Article.update({title: title, slug: slugify(title), body: body, categoryId: categoryId}, {
+    Article.update({title: title, slug: slugify(title), body: body, categoryId: category}, {
         where : {
             id: id
         }
     }).then(() => {
         res.redirect("/admin/articles");
+    }).catch(error => {
+        res.redirect("/")
     })
 })
 

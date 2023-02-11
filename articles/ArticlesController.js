@@ -89,7 +89,7 @@ router.post("/articles/update", (req,res) => {
 router.get("/articles/page/:num", (req,res) => {
     var page = req.params.num
     var offset = 0;
-    if(isNaN(page) || page == 1){
+    if(isNaN(page) || page <= 1){
         offset = 0;
     }else{
         offset = (parseInt(page) - 1) * 4;

@@ -1,5 +1,5 @@
 # Guia-Press
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/AlfredoLSN/Guia-Press/blob/main/LICENCE) 
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/AlfredoLSN/Guia-Presss/blob/main/LICENCE) 
 
 # Sobre o projeto
 

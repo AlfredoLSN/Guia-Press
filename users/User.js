@@ -10,4 +10,6 @@ const User = connection.define('users',{
         allowNull: false
     }
 })
+
+User.sync({force: false});
 module.exports = User;

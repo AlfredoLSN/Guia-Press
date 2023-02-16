@@ -1,22 +1,37 @@
-<%- include ("../../partials/header.ejs") %> 
-<%- include ("../../partials/navbar.ejs") %> 
+<%- include ("../../partials/header.ejs") %> <%- include
+("../../partials/navbar.ejs") %>
 
 <div class="container">
-    <hr>
-    <div class="card mt-5">
-        <div class="card-header">
-            <h2>Edição de Usuario</h2>
-        </div>
-        <div class="card-body">
-            <form method="POST" action="/users/update">
-                <input class="form-control" type="email" name="email" placeholder="email@exemplo.com"  required value="<%= user.email %>"><br>
-                <input class="form-control" type="password" name="password" placeholder="*********" required><br>
-                <input type="hidden" name="id" value="<%= user.id %>">
-                <input type="hidden" name="oldEmail" value="<%= user.email %>">
-                <button type="submit" class="btn btn-success btn-block">Atualizar</button>
-            </form>
-        </div>
+  <hr />
+  <div class="card mt-5">
+    <div class="card-header">
+      <h2>Edição de Usuario</h2>
     </div>
+    <div class="card-body">
+      <form method="POST" action="/users/update">
+        <input
+          class="form-control"
+          type="email"
+          name="email"
+          placeholder="email@exemplo.com"
+          required
+          value="<%= user.email %>"
+        /><br />
+        <input
+          class="form-control"
+          type="password"
+          name="password"
+          placeholder="*********"
+          required
+        /><br />
+        <input type="hidden" name="id" value="<%= user.id %>" />
+        <input type="hidden" name="oldEmail" value="<%= user.email %>" />
+        <button type="submit" class="btn btn-success btn-block">
+          Atualizar
+        </button>
+      </form>
+    </div>
+  </div>
 </div>
 
-<%- include ("../../partials/footer.ejs") %> 
+<%- include ("../../partials/footer.ejs") %>

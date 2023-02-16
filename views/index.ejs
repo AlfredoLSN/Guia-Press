@@ -1,37 +1,36 @@
-<%- include ("partials/header.ejs") %> 
-<%- include ("partials/homenavbar.ejs") %>
+<%- include ("partials/header.ejs") %> <%- include ("partials/homenavbar.ejs")
+%>
 <body>
-    <div class="container">
-        <hr>
-        <div class="jumbotron">
-            <h1 class="display-4">Bem-vindo</h1>
-            <p class="lead">Este é um simples blog</p>
-            <hr class="my-4">
-            <p>Descrição detalhada aqui!</p>
-            <a class="btn btn-primary btn-lg" href="#" role="button">Leia mais</a>
-        </div>
-        <hr>
-        <% articles.forEach(article => { %>
-            <div class="card">
-                <div class="card-header">
-                    <h2><%= article.title %> </h2>
-                </div>
-                <div class="card-body">
-                    <a class="btn btn-success" href="/<%= article.slug %> ">Ler artigo</a>
-
-                </div>
-            </div>
-            <br>
-        <% }) %>
-
-           <div class="row">
-                <div class="col col-12">
-                    <a style="float:right" href="/articles/page/2">Next >>></a>
-                </div>
-                <hr>
-           </div> 
-           <hr>
+  <div class="container">
+    <hr />
+    <div class="jumbotron">
+      <h1 class="display-4">Bem-vindo</h1>
+      <p class="lead">Este é um simples blog</p>
+      <hr class="my-4" />
+      <p>Descrição detalhada aqui!</p>
+      <a class="btn btn-primary btn-lg" href="#" role="button">Leia mais</a>
     </div>
+    <hr />
+    <% articles.forEach(article => { %>
+    <div class="card">
+      <div class="card-header">
+        <h2><%= article.title %></h2>
+      </div>
+      <div class="card-body">
+        <a class="btn btn-success" href="/<%= article.slug %> ">Ler artigo</a>
+      </div>
+    </div>
+    <br />
+    <% }) %>
+
+    <div class="row">
+      <div class="col col-12">
+        <a style="float: right" href="/articles/page/2">Next >>></a>
+      </div>
+      <hr />
+    </div>
+    <hr />
+  </div>
 </body>
 
-<%- include ("partials/footer.ejs") %> 
+<%- include ("partials/footer.ejs") %>

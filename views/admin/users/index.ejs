@@ -1,49 +1,54 @@
-<%- include ("../../partials/header.ejs") %> 
-<%- include ("../../partials/navbar.ejs") %> 
+<%- include ("../../partials/header.ejs") %> <%- include
+("../../partials/navbar.ejs") %>
 
 <div class="container">
-    <hr>
-    <h2>Usuários</h2>
-    <a class="btn btn-success" href="/admin/users/create">Criar novo usuario</a>
-    <hr>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Email</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-
-            
-            <% users.forEach(user => { %>
-                <tr>
-                    <td><%= user.id %></td>
-                    <td><%= user.email  %></td>
-                    <td>
-                        <a href="/admin/users/edit/<%= user.id %>" class="btn btn-warning">Editar</a>
-                        <form action="/users/delete" method="POST" style="display: inline" onsubmit="confirmarDelecao(event, this)">
-                            <input type="hidden" name="id" value="<%= user.id %>">
-                            <button class="btn btn-danger">Deletar</button>
-                        </form>
-                    </td>
-                </tr>
-            <% }) %>
-        </tbody>
-    </table>
+  <hr />
+  <h2>Usuários</h2>
+  <a class="btn btn-success" href="/admin/users/create">Criar novo usuario</a>
+  <hr />
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.forEach(user => { %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.email %></td>
+        <td>
+          <a href="/admin/users/edit/<%= user.id %>" class="btn btn-warning"
+            >Editar</a
+          >
+          <form
+            action="/users/delete"
+            method="POST"
+            style="display: inline"
+            onsubmit="confirmarDelecao(event, this)"
+          >
+            <input type="hidden" name="id" value="<%= user.id %>" />
+            <button class="btn btn-danger">Deletar</button>
+          </form>
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
 </div>
 
-<%- include ("../../partials/footer.ejs") %> 
+<%- include ("../../partials/footer.ejs") %>
 <script>
-    function confirmarDelecao(event,form){
-        event.preventDefault();
-        console.log("O formulario não foi enviado!")
-        var decision = confirm("Você quer deletar esse usuario?");
-        if(decision){
-            form.submit();
-        }else{
-            console.log("Não quero deletar, foi um acidente!")
-        }
+  function confirmarDelecao(event, form) {
+    event.preventDefault();
+    console.log("O formulario não foi enviado!");
+    var decision = confirm("Você quer deletar esse usuario?");
+    if (decision) {
+      form.submit();
+    } else {
+      console.log("Não quero deletar, foi um acidente!");
     }
+  }
 </script>

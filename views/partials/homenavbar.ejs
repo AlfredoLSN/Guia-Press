@@ -1,14 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class = "navbar-brand" href="/">Blog</a>
+  <a class="navbar-brand" href="/">Blog</a>
 
-    <ul class="navbar-nav mr-auto">
-        <li>
-            <a class="nav-link" href="/">Home</a>
-        </li>
-        <% categories.forEach(category => { %>
-            <li>
-                <a class="nav-link" href="/category/<%= category.slug%>"><%= category.title %> </a>
-            </li>
-        <% }) %>
-    </ul>
+  <ul class="navbar-nav mr-auto">
+    <li>
+      <a class="nav-link" href="/">Home</a>
+    </li>
+    <% categories.forEach(category => { %>
+    <li>
+      <a class="nav-link" href="/category/<%= category.slug%>"
+        ><%= category.title %>
+      </a>
+    </li>
+    <% }) %>
+  </ul>
 </nav>

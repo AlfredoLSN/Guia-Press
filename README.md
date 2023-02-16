@@ -50,7 +50,7 @@ npm install
 #password -> senha do usuário
 
 # executar o projeto
-node index.js
+npm start
 
 # abrir url
 http://localhost:8080/

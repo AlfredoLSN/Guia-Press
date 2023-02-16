@@ -10,11 +10,11 @@ router.get("/admin/users", adminAuth, (req, res) => {
     res.render("admin/users/index", { users: users });
   });
 });
-router.get("/admin/users/create", adminAuth, (req, res) => {
+router.get("/admin/users/create", (req, res) => {
   res.render("admin/users/create");
 });
 
-router.post("/users/create", adminAuth, (req, res) => {
+router.post("/users/create", (req, res) => {
   var email = req.body.email;
   var password = req.body.password;
 

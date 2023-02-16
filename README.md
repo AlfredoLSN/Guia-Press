@@ -30,9 +30,6 @@ A aplicação consiste em um blog de postagem de artigos, possui um painel admin
 ## Front end
 - HTML / CSS / JS 
 - EJS
-## Implantação em produção
-- Back end: ###
-- Banco de dados: ###
 
 # Como executar o projeto
 

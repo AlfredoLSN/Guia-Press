@@ -45,8 +45,10 @@ git clone https://github.com/AlfredoLSN/Guia-Press
 # entrar na pasta do projeto e instalar as dependências
 npm install
 
+# criar um banco de dados mysql
+
 # configurar conexão com banco de dados no diretorio Guia-Press/database/database.js, substituindo
-#name -> nome do banco de dados
+#name -> nome do banco de dados que voce criou
 #user -> usuário do banco de dados
 #password -> senha do usuário
 
